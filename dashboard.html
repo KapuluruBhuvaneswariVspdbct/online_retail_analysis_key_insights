@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Retail Analysis – Key Insights</title>
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #044c14;
+      text-align: center;
+      margin-top: 30px;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .dashboard-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .button-panel {
+      width: 280px;
+      background-color: #A0C878;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .insight-btn {
+      padding: 14px 16px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #ffffff;
+      color: #1f1f1f;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .insight-btn:hover {
+      background-color: #e6ffe4;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transform: translateY(-2px);
+    }
+
+    .insight-btn:focus {
+      outline: none;
+      background-color: #d4fdd0;
+    }
+
+    .image-panel {
+      flex-grow: 1;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .image-panel img {
+      width: 100%;
+      max-width: 850px;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🛒 ONLINE RETAIL ANALYSIS – KEY INSIGHTS</h2>
+
+  <div class="dashboard-section">
+    <!-- Button Panel -->
+    <div class="button-panel">
+      <button class="insight-btn" onclick="showSalesVisual('43.png')">📊 Market vs Target</button> 
+      <button class="insight-btn" onclick="showSalesVisual('44.png')">👥 Customer Performance</button> 
+      <button class="insight-btn" onclick="showSalesVisual('53.png')">🌍 P&L - Markets</button> 
+      <button class="insight-btn" onclick="showSalesVisual('54.png')">📅 P&L - Fiscal Year</button> 
+      <button class="insight-btn" onclick="showSalesVisual('56.png')">🫱 Churning Customers</button> 
+    </div>
+
+    <!-- Image Display Panel -->
+    <div class="image-panel">
+      <img id="salesVisualDisplay" src="43.png" alt="Sales Visual">
+    </div>
+  </div>
+
+  <script>
+    function showSalesVisual(imageSrc) {
+      const image = document.getElementById('salesVisualDisplay');
+      image.style.opacity = 0;
+      setTimeout(() => {
+        image.src = imageSrc;
+        image.style.opacity = 1;
+      }, 200);
+    }
+  </script>
+
+</body>
+</html>
